@@ -23,6 +23,7 @@ class App extends Component
           <span> Name </span><br />
           <span> Phone </span>
         </div>
+        
       </div>
     )
   }
