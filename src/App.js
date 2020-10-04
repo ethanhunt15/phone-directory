@@ -15,6 +15,15 @@ import './App.css'
 class App extends Component
 {
 
+  constructor()
+  {
+    super();
+    this.state = {
+      subscribers: []
+    }
+  }
+
+
   deleteHandler(msg)
   {
     alert(msg);
@@ -22,18 +31,18 @@ class App extends Component
 
   render()
   {
-    let subscribers = [
-      {
-    id: 1,
-    name: "name1",
-    phone: "phone1"
-    },
-    {
-      id: 2,
-      name: "name2",
-      phone: "phone2"
-    }
-    ]
+    // let subscribers = [
+    //   {
+    // id: 1,
+    // name: "name1",
+    // phone: "phone1"
+    // },
+    // {
+    //   id: 2,
+    //   name: "name2",
+    //   phone: "phone2"
+    // }
+    // ]
 
     return(
       <div className="component-body-container">
@@ -46,7 +55,7 @@ class App extends Component
             <span className="grid-item phone-heading">Phone</span>
           </div>
             {
-              subscribers.map(sub =>{
+              this.state.subscribers.map(sub =>{
                 return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
               <span className="grid-item">{sub.phone}</span>
