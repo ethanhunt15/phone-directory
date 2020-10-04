@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 
-const Header = function(){
+const Header = function(props){
     const headerStyle = { textAlign: 'center', padding:20, background:'#000', color:'#fff', textTransform:'uppercase'};
     return(
         <div style={headerStyle}>
-            Phone Directory
+            {props.heading}
             </div>
     )
 }
@@ -14,7 +14,7 @@ const Header = function(){
 //         render()
 //         {
 //             return(<div class="header">
-//             Phone Directory
+//             {this.props.heading}
 //             </div>)
 //         }
     
