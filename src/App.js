@@ -17,10 +17,12 @@ class App extends Component
 
   constructor()
   {
+    console.log("App constructor:: START")
     super();
     this.state = {
       subscribers: []
     }
+    console.log("App constructor:: END")
   }
 
 
@@ -29,8 +31,21 @@ class App extends Component
     alert(msg);
   }
 
+  componentDidMount(){
+    console.log("App componentDidMount:: START END")
+    let newSubscriber = {
+      id: 1,
+      name: "John Wick",
+      phone: "8888888"
+    }
+    let subscribersList = this.state.subscribers;
+    subscribersList.push(newSubscriber);
+    this.setState({subscribers: subscribersList})
+  }
+
   render()
   {
+    console.log("App render:: START")
     // let subscribers = [
     //   {
     // id: 1,
@@ -43,7 +58,7 @@ class App extends Component
     //   phone: "phone2"
     // }
     // ]
-
+    console.log("App render:: BEFORE RETURN")
     return(
       <div className="component-body-container">
         <Header heading="Phone Directory" />
