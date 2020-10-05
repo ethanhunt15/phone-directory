@@ -3,61 +3,16 @@ import ReactDOM from 'react-dom';
 import Header from './Header'
 import './ShowSubscriber.css'
 
-// function App() {
-//   return (
-//     <div>
-      
-//     </div>
-//   );
-// }
-
-
-class App extends Component
+class ShowSubscriber extends Component
 {
-
-  constructor()
-  {
-    console.log("App constructor:: START")
-    super();
-    this.state = {
-      subscribers: []
-    }
-    console.log("App constructor:: END")
-  }
-
-
   deleteHandler(msg)
   {
     alert(msg);
   }
 
-  componentDidMount(){
-    console.log("App componentDidMount:: START END")
-    let newSubscriber = {
-      id: 1,
-      name: "John Wick",
-      phone: "8888888"
-    }
-    let subscribersList = this.state.subscribers;
-    subscribersList.push(newSubscriber);
-    this.setState({subscribers: subscribersList})
-  }
-
   render()
   {
     console.log("App render:: START")
-    // let subscribers = [
-    //   {
-    // id: 1,
-    // name: "name1",
-    // phone: "phone1"
-    // },
-    // {
-    //   id: 2,
-    //   name: "name2",
-    //   phone: "phone2"
-    // }
-    // ]
     console.log("App render:: BEFORE RETURN")
     return(
       <div className="component-body-container">
@@ -70,7 +25,7 @@ class App extends Component
             <span className="grid-item phone-heading">Phone</span>
           </div>
             {
-              this.state.subscribers.map(sub =>{
+              this.props.subscriberList.map(sub =>{
                 return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
               <span className="grid-item">{sub.phone}</span>
@@ -88,4 +43,4 @@ class App extends Component
   }
 }
 
-export default App;
+export default ShowSubscriber;
