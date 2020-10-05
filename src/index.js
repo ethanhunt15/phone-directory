@@ -6,9 +6,7 @@ import PhoneDirectory from './PhoneDirectory'
 import "./common/common.css"
 
 ReactDOM.render(
-  <React.StrictMode>
-    <PhoneDirectory />
-  </React.StrictMode>,
+  <PhoneDirectory />,
   document.getElementById('root')
 );
 
